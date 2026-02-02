@@ -1,0 +1,57 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "commonjs": true,
+    "jest": true,
+    "jest/globals": true
+  },
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended", "plugin:jest/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ],
+    "object-curly-newline": ["warn", { "consistent": true }],
+    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "no-console": "off",
+    "operator-linebreak": "off",
+    "implicit-arrow-linebreak": "off",
+    "indent": "off",
+    "arrow-body-style": ["warn", "as-needed"],
+    "arrow-parens": ["error", "as-needed"],
+    "no-underscore-dangle": "off",
+    "jest/expect-expect": "off",
+    "jest/no-test-prefixes": "off",
+    "jest/no-disabled-tests": "off",
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }]
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
